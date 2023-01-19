@@ -1,0 +1,38 @@
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background: #111;
+}
+
+$transition : .2s;
+$items : 5;
+
+li {
+	float: left;
+	width: 100px;
+	height: 150px;
+	transition: transform $transition;
+	
+	@for $i from 1 through $items {
+		&:nth-child(#{$i}) {
+			background: mix(firebrick, tomato, $i/$items * 100%);
+		}
+	}
+}
+
+ul:hover {
+	li {
+		transform: translateX(-25%);
+	}
+
+	li:hover {
+		transform: scale(1.5);
+		transition-duration: $transition/1.1;
+	}
+
+	li:hover ~ li {
+		transform: translateX(25%);
+	}
+}

@@ -1,0 +1,30 @@
+
+body {
+  background: #C8C8A9;
+  text-align: center;
+}
+
+svg {
+  margin: 50px auto;
+  width: 45%;
+}
+
+.logo {
+  fill: #FE4365;
+}
+
+.clip {
+  animation: slide 8s infinite;
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(-135px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  to {
+    transform: translateY(-135px);
+  }
+}
